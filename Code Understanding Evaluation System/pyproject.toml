@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "codeassess"
+version = "1.0.0"
+description = "代码理解测评系统 - 面向 AI 辅助编程的代码理解测评平台"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "山东建筑大学" }
+]
+license = { text = "MIT" }
+keywords = ["code-assessment", "education", "llm", "python"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+]
+
+[project.scripts]
+codeassess = "codeassess.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["codeassess*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-v --tb=short"
